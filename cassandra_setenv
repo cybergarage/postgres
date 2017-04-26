@@ -1,0 +1,11 @@
+#!/bin/sh
+branch_name=`git branch | grep "*" | awk {'print $2;'}`
+pg_install_dir=${HOME}/pgsql/${branch_name}
+mkdir -p ${pg_install_dir}
+
+export PATH=$PATH:${pg_install_dir}/bin
+export LD_LIBRARY_PATH=${pg_install_dir}/lib
+
+echo ${pg_install_dir}
+echo ${LD_LIBRARY_PATH}
+echo ${PATH}
