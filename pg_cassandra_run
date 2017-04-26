@@ -1,12 +1,3 @@
 #!/bin/sh
-source ./pg_cassandra_setenv
-
-if [ -d "${pg_install_db_dir}" ]; then
-  rm -rf ${pg_install_db_dir}
-fi
-
-mkdir ${pg_install_db_dir}
-
-initdb --locale=C -D ${pg_install_db_dir}
-
+source ./pg_cassandra_setdb
 ${pg_install_bin_dir}/postmaster -d 1 -D ${pg_install_db_dir}
