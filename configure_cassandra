@@ -1,0 +1,7 @@
+#!/bin/sh
+branch_name=`git branch | grep "*" | awk {'print $2;'}`
+echo ${branch_name}
+install_dir=${HOME}/pgsql/${branch_name}
+echo ${install_dir}
+mkdir -p ${install_dir}
+./configure --prefix=${install_dir} --enable-debug --enable-cassert --enable-tap-tests CFLAGS=-O0
