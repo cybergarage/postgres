@@ -1,5 +1,5 @@
 #!/bin/sh
-source ./cassandra_setenv
+source ./pg_cassandra_setenv
 
 if [ -d "${pg_install_db_dir}" ]; then
   rm -rf ${pg_install_db_dir}

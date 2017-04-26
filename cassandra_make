@@ -1,3 +1,0 @@
-#!/bin/sh
-source ./cassandra_configure
-make -j 2 $@
