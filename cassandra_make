@@ -1,3 +1,3 @@
 #!/bin/sh
-source ./cassandra_setenv
+source ./cassandra_configure
 make -j 2 $@

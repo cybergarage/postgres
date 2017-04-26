@@ -1,7 +1,15 @@
 #!/bin/sh
 branch_name=`git branch | grep "*" | awk {'print $2;'}`
+
+pg_port=5432
+
 pg_install_dir=${HOME}/pgsql/${branch_name}
-mkdir -p ${pg_install_dir}
+pg_install_bin_dir=${pg_install_dir}/bin
+pg_install_db_dir=${pg_install_dir}/db
+
+if [ ! -d "${pg_install_dir}" ]; then
+  mkdir -p ${pg_install_dir}
+fi
 
 export PATH=$PATH:${pg_install_dir}/bin
 export LD_LIBRARY_PATH=${pg_install_dir}/lib
