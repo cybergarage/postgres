@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pg_port=5432
 

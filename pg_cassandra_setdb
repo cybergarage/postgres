@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 source ./pg_cassandra_setenv
 
 if [ -d "${pg_install_db_dir}" ]; then
