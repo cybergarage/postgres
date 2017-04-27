@@ -1,9 +1,11 @@
 #!/bin/sh
-branch_name=`git branch | grep "*" | awk {'print $2;'}`
 
 pg_port=5432
 
-pg_install_dir=${HOME}/pgsql/${branch_name}
+#branch_name=`git branch | grep "*" | awk {'print $2;'}`
+#pg_install_dir=${HOME}/pgsql/${branch_name}
+
+pg_install_dir=`pwd`
 pg_install_bin_dir=${pg_install_dir}/bin
 pg_install_db_dir=${pg_install_dir}/db
 
