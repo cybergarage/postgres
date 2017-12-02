@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo docker run --name postgres-cassandra -d cassandra:3.0.13

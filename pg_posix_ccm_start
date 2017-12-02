@@ -1,0 +1,11 @@
+#!/bin/bash
+platform=`uname`
+
+if [ "$platform" == "Darwin" ]; then
+  sudo ifconfig lo0 alias 127.0.0.2
+  sudo ifconfig lo0 alias 127.0.0.3
+fi
+
+ccm create -n 3 -v 3.0.13 postgres
+ccm start
+ccm status

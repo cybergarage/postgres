@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo docker stop postgres-cassandra
+sudo docker rm `sudo docker ps -aq`

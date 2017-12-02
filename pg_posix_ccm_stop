@@ -1,0 +1,5 @@
+#!/bin/bash
+ccm clear
+ccm stop
+ps -A | grep cassandra | grep java | awk '{print $1;}' | xargs kill -9
+rm -rf ~/.ccm/postgres

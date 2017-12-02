@@ -1,0 +1,2 @@
+#!/bin/bash
+./pg_cassandra_configure_md  CPPFLAGS="-I/usr/local/include/" LDFLAGS="-L/usr/local/lib" $@

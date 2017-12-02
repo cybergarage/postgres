@@ -1,0 +1,13 @@
+#!/bin/bash
+date_suffix=`date "+%Y%m%d"`
+log_file="`basename $0`_${date_suffix}.txt"
+
+source ./pg_cassandra_setenv > /dev/null
+
+if [ -d "${pg_install_db_dir}" ]; then
+  rm -rf ${pg_install_db_dir}
+fi
+
+mkdir -p ${pg_install_db_dir}
+
+initdb --locale=C -D ${pg_install_db_dir} --debug > ${log_file} 2>&1

@@ -1,0 +1,7 @@
+#!/bin/bash
+date_suffix=`date "+%Y%m%d"`
+log_file="`basename $0`_${date_suffix}.txt"
+
+source ./pg_cassandra_setenv > /dev/null
+${pg_install_bin_dir}/postmaster -d 1 -D ${pg_install_db_dir} > ${log_file} 2>&1
+

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+usage() {
+        echo "Usage : `basename $0` <source directory>"
+        exit 1
+}
+
+if [ $# -ne 1 ]; then
+  usage
+fi
+
+src_dir=$1
+
+########################################
+# Original Script Files
+########################################
+
+ cp $src_dir/pg_cassandra_* .
+
+########################################
+# Original Source Files
+########################################
+
+new_sources=(
+"src/backend/storage/smgr/smgr_trace.h"
+"src/backend/storage/smgr/smgr_trace.c"
+"src/backend/storage/smgr/cassandra_func.h"
+"src/backend/storage/smgr/cassandra_func.c"
+"src/backend/storage/smgr/cassandra.c"
+"src/backend/storage/smgr/Makefile"
+)
+
+n=0
+for file in ${new_sources[@]}; do
+  #echo "cp $src_dir/${file} ${file}"
+  cp $src_dir/${file} ${file}
+  let n++
+done
+
+########################################
+# Update Source Files
+########################################
+
+update_sources=(
+"configure.in"
+"src/include/storage/smgr.h"
+"src/backend/storage/smgr/md.c"
+"src/backend/storage/smgr/smgr.c"
+)

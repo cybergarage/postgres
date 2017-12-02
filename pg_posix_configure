@@ -1,0 +1,2 @@
+#!/bin/bash
+./pg_cassandra_configure_md --enable-cassandra-storage

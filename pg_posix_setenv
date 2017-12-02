@@ -1,0 +1,28 @@
+#!/bin/bash
+
+pg_port=5432
+
+#branch_name=`git branch | grep "*" | awk {'print $2;'}`
+#pg_install_dir=${HOME}/pgsql/${branch_name}
+
+pg_install_dir=`pwd`
+pg_install_bin_dir=${pg_install_dir}/bin
+pg_install_db_dir=${pg_install_dir}/db
+
+if [ ! -d "${pg_install_dir}" ]; then
+  mkdir -p ${pg_install_dir}
+fi
+
+export PATH=$PATH:${pg_install_dir}/bin
+export LD_LIBRARY_PATH=${pg_install_dir}/lib
+
+export LC_COLLATE=C
+export LC_CTYPE=C
+export LC_MESSAGES=C
+export LC_MONETARY=C
+export LC_NUMERIC=C
+export LC_TIME=C
+
+echo ${pg_install_dir}
+echo ${LD_LIBRARY_PATH}
+echo ${PATH}
