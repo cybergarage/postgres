@@ -1,4 +1,4 @@
 #!/bin/bash
 export CFLAGS="-I/usr/local/include/"
 export LDFLAGS="-L/usr/local/lib"
-./pg_cassandra_make
+./pg_posix_make

@@ -2,7 +2,7 @@
 date_suffix=`date "+%Y%m%d"`
 log_file="`basename $0`_${date_suffix}.txt"
 
-source ./pg_cassandra_setenv > /dev/null
+source ./pg_posix_setenv > /dev/null
 
 if [ -d "${pg_install_db_dir}" ]; then
   rm -rf ${pg_install_db_dir}

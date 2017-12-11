@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./pg_cassandra_setdb
+source ./pg_posix_setdb
 
 make clean
 rm -rf ${pg_install_db_dir}

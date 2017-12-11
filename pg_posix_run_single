@@ -13,7 +13,7 @@ sql_file=$2
 date_suffix=`date "+%Y%m%d"`
 log_file="`basename $0`_${name}_${date_suffix}.txt"
 
-source ./pg_cassandra_setenv > /dev/null
+source ./pg_posix_setenv > /dev/null
 
 cat ${sql_file} | ${pg_install_bin_dir}/postmaster --single -F -O -j -c search_path=pg_catalog -c exit_on_error=true -D ${pg_install_db_dir} template1 > ${log_file} 2>&1
 cat ${log_file}

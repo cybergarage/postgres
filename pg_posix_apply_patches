@@ -15,7 +15,7 @@ src_dir=$1
 # Original Script Files
 ########################################
 
- cp $src_dir/pg_cassandra_* .
+ cp $src_dir/pg_posix_* .
 
 ########################################
 # Original Source Files

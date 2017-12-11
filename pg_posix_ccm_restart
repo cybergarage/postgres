@@ -1,3 +1,3 @@
 #!/bin/bash
-./pg_cassandra_ccm_stop
-./pg_cassandra_ccm_start
+./pg_posix_ccm_stop
+./pg_posix_ccm_start
